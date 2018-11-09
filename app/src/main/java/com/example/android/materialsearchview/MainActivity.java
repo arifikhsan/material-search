@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_search, menu);
 
-        MenuItem searchItem = menu.findItem(R.id.search);
+        final MenuItem searchItem = menu.findItem(R.id.search);
 
         searchView.setMenuItem(searchItem);
         searchView.setHint("Search...");
@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 searchView.clearFocus();
-                searchView.closeSearch();
                 return true;
             }
 
